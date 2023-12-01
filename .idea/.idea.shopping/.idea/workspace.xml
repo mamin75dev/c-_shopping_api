@@ -6,24 +6,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8147193a-3bc0-4c08-b78b-cce792fda718" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoppingApi.Data/DataContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoppingApi.Data/Models/User.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoppingApi/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoppingApi/Controllers/AuthController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoppingApi/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoppingApi/Dto/Request/Auth/LoginDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoppingApi/Dto/Request/Auth/RegisterUserDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoppingApi/Dto/Response/ApiResponseDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoppingApi/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoppingApi/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoppingApi/Services/AuthService/AuthService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoppingApi/Services/AuthService/IAuthService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoppingApi/ShoppingApi.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoppingApi/WeatherForecast.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoppingApi/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoppingApi/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping.sln" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoppingApi.Data/Auth/UserRoles.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoppingApi.Data/Models/Category.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoppingApi.Data/Models/Product.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoppingApi/Services/Category/CategoryService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoppingApi/Services/Category/ICategoryService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoppingApi/Services/Product/IProductService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.shopping/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.shopping/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi.Data/DataContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/DataContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi.Data/Migrations/DataContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/Migrations/DataContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi.Data/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/Auth/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi/Dto/Request/Auth/LoginDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/Dto/Request/Auth/LoginDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi/Dto/Request/Auth/RegisterUserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/Dto/Request/Auth/RegisterUserDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi/Dto/Response/ApiResponseDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/Dto/Response/ApiResponseDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi/Dto/Response/ResponseStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/Dto/Response/ResponseStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi/Services/AuthService/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi/Services/Auth/AuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi/Services/AuthService/IAuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi/Services/Auth/IAuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi/WeatherForecast.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +69,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="rider.code.cleanup.on.save" value="true" />
-    <property name="settings.editor.selected.configurable" value="actions.on.save" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.shopping">
@@ -111,15 +112,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1701374451898</updated>
-      <workItem from="1701374463652" duration="13041000" />
+      <workItem from="1701374463652" duration="13227000" />
+      <workItem from="1701430628018" duration="3553000" />
     </task>
+    <task id="LOCAL-00001" summary="user auth">
+      <created>1701430514193</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701430514193</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -134,24 +144,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/ShoppingApi/Services/AuthService/AuthService.cs</url>
-          <line>25</line>
-          <properties documentPath="$PROJECT_DIR$/ShoppingApi/Services/AuthService/AuthService.cs" initialLine="24" containingFunctionPresentation="method 'GenerateJsonWebToken'">
-            <startOffsets>
-              <option value="837" />
-            </startOffsets>
-            <endOffsets>
-              <option value="912" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="user auth" />
+    <option name="LAST_COMMIT_MESSAGE" value="user auth" />
   </component>
 </project>

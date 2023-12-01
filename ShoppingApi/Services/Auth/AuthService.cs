@@ -26,12 +26,17 @@ public class AuthService : IAuthService
         var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey));
         var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-        var claims = new[]
+        var claims = new List<Claim>
         {
-            new Claim(JwtRegisteredClaimNames.Sub, user.UserName),
-            new Claim(JwtRegisteredClaimNames.PhoneNumber, user.PhoneNumber),
-            new Claim(JwtRegisteredClaimNames.Jti, user.Id)
+            new(JwtRegisteredClaimNames.Sub, user.UserName),
+            new(JwtRegisteredClaimNames.PhoneNumber, user.PhoneNumber),
+            new(JwtRegisteredClaimNames.Jti, user.Id)
         };
+
+        var roles = await _userManager.GetRolesAsync(user);
+
+        foreach (var userRole in roles) claims.Add(new Claim(ClaimTypes.Role, userRole));
+
 
         var token = new JwtSecurityToken(
             _configuration["Jwt:Issuer"],

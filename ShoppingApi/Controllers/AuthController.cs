@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using shopping.Dto;
 using shopping.Dto.Response;
 using shopping.Services.AuthService;
+using ShoppingApi.Data.Auth;
 using ShoppingApi.Data.Models;
 
 namespace shopping.Controllers;
@@ -16,13 +17,16 @@ public class AuthController : ControllerBase
 {
     private readonly IAuthService _authService;
     private readonly IConfiguration _configuration;
+    private readonly RoleManager<IdentityRole> _roleManager;
     private readonly UserManager<User> _userManager;
 
-    public AuthController(IConfiguration configuration, IAuthService authService, UserManager<User> manager)
+    public AuthController(IConfiguration configuration, IAuthService authService, UserManager<User> manager,
+        RoleManager<IdentityRole> roleManager)
     {
         _configuration = configuration;
         _authService = authService;
         _userManager = manager;
+        _roleManager = roleManager;
     }
 
     [AllowAnonymous]
@@ -53,9 +57,48 @@ public class AuthController : ControllerBase
     [Route("register")]
     public async Task<IActionResult> Register([FromBody] RegisterUserDto dto)
     {
+        var result = await RegisterUser(dto);
+
+        if (result == null)
+            return BadRequest(new ApiResponseDto<object> { Status = "Error", Message = "User already exists!" });
+
+        if (!result.Succeeded)
+            return BadRequest(
+                new ApiResponseDto<object>
+                {
+                    Status = "Error", Message = "User creation failed! Please check user details and try again.",
+                    Data = result.Errors
+                });
+        return Ok(new ApiResponseDto<object> { Status = "Success", Message = "User created successfully!" });
+    }
+
+
+    [AllowAnonymous]
+    [HttpPost]
+    [Route("register-admin")]
+    public async Task<IActionResult> RegisterAdmin([FromBody] RegisterUserDto dto)
+    {
+        var result = await RegisterUser(dto);
+        if (result == null)
+            return BadRequest(new ApiResponseDto<object> { Status = "Error", Message = "User already exists!" });
+
+        if (!result.Succeeded)
+            return BadRequest(
+                new ApiResponseDto<object>
+                {
+                    Status = "Error", Message = "User creation failed! Please check user details and try again.",
+                    Data = result.Errors
+                });
+
+
+        return Ok(new ApiResponseDto<object> { Status = "Success", Message = "User created successfully!" });
+    }
+
+    private async Task<IdentityResult> RegisterUser(RegisterUserDto dto)
+    {
         var userExists = await _userManager.FindByNameAsync(dto.UserName);
         if (userExists != null)
-            return BadRequest(new ApiResponseDto<object> { Status = "Error", Message = "User already exists!" });
+            return null;
 
         User user = new()
         {
@@ -68,14 +111,17 @@ public class AuthController : ControllerBase
         };
 
         var result = await _userManager.CreateAsync(user, dto.Password);
-        if (!result.Succeeded)
-            return BadRequest(
-                new ApiResponseDto<object>
-                {
-                    Status = "Error", Message = "User creation failed! Please check user details and try again.",
-                    Data = result.Errors
-                });
 
-        return Ok(new ApiResponseDto<object> { Status = "Success", Message = "User created successfully!" });
+        if (!await _roleManager.RoleExistsAsync(UserRoles.Admin))
+            await _roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
+        if (!await _roleManager.RoleExistsAsync(UserRoles.User))
+            await _roleManager.CreateAsync(new IdentityRole(UserRoles.User));
+
+        if (await _roleManager.RoleExistsAsync(UserRoles.Admin))
+            await _userManager.AddToRoleAsync(user, UserRoles.Admin);
+        if (await _roleManager.RoleExistsAsync(UserRoles.Admin))
+            await _userManager.AddToRoleAsync(user, UserRoles.User);
+
+        return result;
     }
 }
