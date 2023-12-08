@@ -1,4 +1,4 @@
-namespace shopping.Dto;
+namespace ShoppingApi.Data.Dto.Request.Auth;
 
 public class RegisterUserDto
 {

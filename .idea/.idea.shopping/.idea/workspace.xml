@@ -6,25 +6,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8147193a-3bc0-4c08-b78b-cce792fda718" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ShoppingApi.Data/Auth/UserRoles.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoppingApi.Data/Models/Category.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoppingApi.Data/Models/Product.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoppingApi/Services/Category/CategoryService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoppingApi/Services/Category/ICategoryService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ShoppingApi/Services/Product/IProductService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoppingApi.Infrastructure/Interfaces/ICategoryRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoppingApi.Infrastructure/Interfaces/IGenericRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoppingApi.Infrastructure/Interfaces/IProductRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoppingApi.Infrastructure/Interfaces/IUnitOfWork.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoppingApi.Infrastructure/Repositories/CategoryRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoppingApi.Infrastructure/Repositories/GenericRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoppingApi.Infrastructure/Repositories/ProductRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoppingApi.Infrastructure/Repositories/UnitOfWork.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoppingApi.Infrastructure/ShoppingApi.Infrastructure.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoppingApi/Controllers/CategoryController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.shopping/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.shopping/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi.Data/Auth/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/Models/Auth/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi.Data/Auth/UserRoles.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/Models/Auth/UserRoles.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoppingApi.Data/DataContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/DataContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi.Data/Dto/Request/Auth/LoginDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/Dto/Request/Auth/LoginDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi.Data/Dto/Request/Auth/RegisterUserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/Dto/Request/Auth/RegisterUserDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi.Data/Dto/Response/ApiResponseDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/Dto/Response/ApiResponseDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi.Data/Dto/Response/ResponseStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/Dto/Response/ResponseStatus.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoppingApi.Data/Migrations/DataContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/Migrations/DataContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoppingApi.Data/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/Auth/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi.Data/Models/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/Models/Category.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoppingApi/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi/Controllers/AuthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoppingApi/Dto/Request/Auth/LoginDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/Dto/Request/Auth/LoginDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoppingApi/Dto/Request/Auth/RegisterUserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/Dto/Request/Auth/RegisterUserDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoppingApi/Dto/Response/ApiResponseDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/Dto/Response/ApiResponseDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoppingApi/Dto/Response/ResponseStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/Dto/Response/ResponseStatus.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ShoppingApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoppingApi/Services/AuthService/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi/Services/Auth/AuthService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoppingApi/Services/AuthService/IAuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi/Services/Auth/IAuthService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoppingApi/WeatherForecast.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi/Services/Auth/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Services/Services/AuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi/Services/Auth/IAuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Services/Interfaces/IAuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi/Services/Category/CategoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Services/Services/CategoryService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi/Services/Category/ICategoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Services/Interfaces/ICategoryService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi/Services/Product/IProductService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Services/Interfaces/IProductService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi/Services/Product/ProductService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Services/Services/ProductService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi/ShoppingApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi/ShoppingApi.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping.sln" beforeDir="false" afterPath="$PROJECT_DIR$/shopping.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,14 +54,23 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/ShoppingApi/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a89c43b9e4639a86ef72bfbdd915cf3a88d4582ea46a7bc809f17b1baa77abf/AsyncTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ShoppingApi.Infrastructure/Repositories/CategoryRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/dcedbc87754f258c5cbaf81957c25226a51ba1fd897ccb6a3d357ace4202/AuthorizeAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7733bdb26b2be012c4266979a95d3728e74790201f91a02df4529ee6c2f37/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ShoppingApi/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/37a954845b52703c5cce1aacf8fa1292378878e82bf68c4c4b5effc447316e9/IdentityUser.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7262732eee179af215faab36a7f3c3cfac93ba12af52a3888d839fe7e53420/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1dd01cdf46454af8b57ca82bc8f0b283904e87d1f871f5e54fe6cd345ba024/JsonPropertyInfoOfT.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e5cca3f0812c4cd5b3459befa246b34613f78/20/50451ecb/JwtSecurityToken.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/beb9de248d23e38ea4ff4d1233bf5681324b6caac12b72d62457917392f3/Future.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ShoppingApi/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ShoppingApi.Infrastructure/Interfaces/IGenericRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a89c43b9e4639a86ef72bfbdd915cf3a88d4582ea46a7bc809f17b1baa77abf/AsyncTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ShoppingApi.Infrastructure/Interfaces/IUnitOfWork.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ShoppingApi/appsettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ShoppingApi.Infrastructure/Interfaces/ICategoryRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1dd01cdf46454af8b57ca82bc8f0b283904e87d1f871f5e54fe6cd345ba024/JsonPropertyInfoOfT.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ShoppingApi.Infrastructure/Interfaces/IProductRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ShoppingApi.Infrastructure/Repositories/GenericRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/938451c5b6533f9735e3b49a511f654a35443bc73eecd2d434f10d8c2ba1a/Encoding.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -69,7 +89,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="rider.code.cleanup.on.save" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.shopping">
@@ -113,7 +133,8 @@
       <option name="presentableId" value="Default" />
       <updated>1701374451898</updated>
       <workItem from="1701374463652" duration="13227000" />
-      <workItem from="1701430628018" duration="3553000" />
+      <workItem from="1701430628018" duration="19208000" />
+      <workItem from="1702044070569" duration="408000" />
     </task>
     <task id="LOCAL-00001" summary="user auth">
       <created>1701430514193</created>

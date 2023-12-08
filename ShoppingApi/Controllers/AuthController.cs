@@ -1,11 +1,10 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using shopping.Dto;
-using shopping.Dto.Response;
-using shopping.Services.AuthService;
-using ShoppingApi.Data.Auth;
-using ShoppingApi.Data.Models;
+using ShoppingApi.Data.Dto.Request.Auth;
+using ShoppingApi.Data.Dto.Response;
+using ShoppingApi.Data.Models.Auth;
+using ShoppingApi.Services.Interfaces;
 
 namespace shopping.Controllers;
 
@@ -40,11 +39,11 @@ public class AuthController : ControllerBase
 
         if (user != null)
         {
-            var tokenString = _authService.GenerateJsonWebToken(user);
+            var tokenString = await _authService.GenerateJsonWebToken(user);
             response = Ok(new ApiResponseDto<object>
             {
                 Status = ResponseStatus.Success,
-                Message = "User Created Successfully",
+                Message = "Successfull login!",
                 Data = new { token = tokenString }
             });
         }

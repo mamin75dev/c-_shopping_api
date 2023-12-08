@@ -2,12 +2,14 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using shopping.Dto;
-using ShoppingApi.Data.Models;
+using ShoppingApi.Data.Dto.Request.Auth;
+using ShoppingApi.Data.Models.Auth;
+using ShoppingApi.Services.Interfaces;
 using JwtRegisteredClaimNames = Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames;
 
-namespace shopping.Services.AuthService;
+namespace ShoppingApi.Services.Services;
 
 public class AuthService : IAuthService
 {
@@ -39,8 +41,8 @@ public class AuthService : IAuthService
 
 
         var token = new JwtSecurityToken(
-            _configuration["Jwt:Issuer"],
-            _configuration["Jwt:Audience"],
+            _configuration["JwtSettings:Issuer"],
+            _configuration["JwtSettings:Audience"],
             claims,
             expires: DateTime.Now.AddDays(7),
             signingCredentials: credentials

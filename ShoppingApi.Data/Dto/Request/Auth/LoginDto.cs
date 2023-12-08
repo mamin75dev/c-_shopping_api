@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace shopping.Dto;
+namespace ShoppingApi.Data.Dto.Request.Auth;
 
 public class LoginDto
 {

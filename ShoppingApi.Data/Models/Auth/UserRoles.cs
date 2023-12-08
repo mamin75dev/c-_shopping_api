@@ -1,4 +1,4 @@
-namespace ShoppingApi.Data.Auth;
+namespace ShoppingApi.Data.Models.Auth;
 
 public class UserRoles
 {

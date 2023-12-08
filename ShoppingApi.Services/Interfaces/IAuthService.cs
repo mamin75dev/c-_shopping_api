@@ -1,8 +1,9 @@
 using Microsoft.AspNetCore.Identity;
-using shopping.Dto;
-using ShoppingApi.Data.Models;
+using Microsoft.Extensions.Configuration;
+using ShoppingApi.Data.Dto.Request.Auth;
+using ShoppingApi.Data.Models.Auth;
 
-namespace shopping.Services.AuthService;
+namespace ShoppingApi.Services.Interfaces;
 
 public abstract class IAuthService
 {

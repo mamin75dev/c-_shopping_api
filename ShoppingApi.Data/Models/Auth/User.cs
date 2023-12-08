@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace ShoppingApi.Data.Models;
+namespace ShoppingApi.Data.Models.Auth;
 
 public class User : IdentityUser
 {

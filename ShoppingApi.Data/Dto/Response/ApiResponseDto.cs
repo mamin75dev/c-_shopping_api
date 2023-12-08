@@ -1,4 +1,4 @@
-namespace shopping.Dto.Response;
+namespace ShoppingApi.Data.Dto.Response;
 
 public class ApiResponseDto<T>
 {
