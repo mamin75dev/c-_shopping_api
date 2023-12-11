@@ -1,4 +1,3 @@
-using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +8,9 @@ using ShoppingApi.Infrastructure.Interfaces;
 using ShoppingApi.Infrastructure.Repositories;
 using ShoppingApi.Services.Interfaces;
 using ShoppingApi.Services.Services;
+using System.Text;
+
+const string BearerPrefix = "Bearer ";
 
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
@@ -43,14 +45,33 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 {
     options.TokenValidationParameters = new TokenValidationParameters
     {
-        ValidIssuer = issuer,
-        ValidAudience = audience,
+        // ValidIssuer = issuer,
+        // ValidAudience = audience,
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key)),
-        ValidateIssuer = true,
-        ValidateAudience = true,
+        ValidateIssuer = false,
+        ValidateAudience = false,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true
     };
+    /*options.Events = new JwtBearerEvents
+    {
+        OnMessageReceived = context =>
+        {
+            if (context.Request.Headers.TryGetValue("Authorization", out StringValues headerValue))
+            {
+                string token = headerValue;
+                if (!string.IsNullOrEmpty(token) && token.StartsWith(BearerPrefix))
+                {
+                    token = token.Substring(BearerPrefix.Length);
+                }
+
+                context.Token = token;
+            }
+
+            return Task.CompletedTask;
+        }
+
+    };*/
 });
 
 builder.Services.AddAuthorization();
@@ -67,10 +88,21 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseRouting();
 app.UseAuthentication();
+app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors(x =>
+  x.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:5106"));
+
+/*app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});*/
 
 app.Run();

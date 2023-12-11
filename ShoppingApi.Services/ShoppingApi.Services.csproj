@@ -8,9 +8,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.22"/>
-        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.22"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.22"/>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.22" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.22" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.22" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.22">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -19,13 +19,14 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.22.0"/>
-        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.22"/>
+        <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.22.0" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.22" />
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.16.0" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\ShoppingApi.Data\ShoppingApi.Data.csproj"/>
-        <ProjectReference Include="..\ShoppingApi.Infrastructure\ShoppingApi.Infrastructure.csproj"/>
+        <ProjectReference Include="..\ShoppingApi.Data\ShoppingApi.Data.csproj" />
+        <ProjectReference Include="..\ShoppingApi.Infrastructure\ShoppingApi.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

@@ -56,7 +56,7 @@ public class AuthController : ControllerBase
     [Route("register")]
     public async Task<IActionResult> Register([FromBody] RegisterUserDto dto)
     {
-        var result = await RegisterUser(dto);
+        var result = await RegisterUser(dto, UserRoles.User);
 
         if (result == null)
             return BadRequest(new ApiResponseDto<object> { Status = "Error", Message = "User already exists!" });
@@ -65,7 +65,8 @@ public class AuthController : ControllerBase
             return BadRequest(
                 new ApiResponseDto<object>
                 {
-                    Status = "Error", Message = "User creation failed! Please check user details and try again.",
+                    Status = "Error",
+                    Message = "User creation failed! Please check user details and try again.",
                     Data = result.Errors
                 });
         return Ok(new ApiResponseDto<object> { Status = "Success", Message = "User created successfully!" });
@@ -77,7 +78,7 @@ public class AuthController : ControllerBase
     [Route("register-admin")]
     public async Task<IActionResult> RegisterAdmin([FromBody] RegisterUserDto dto)
     {
-        var result = await RegisterUser(dto);
+        var result = await RegisterUser(dto, UserRoles.Admin);
         if (result == null)
             return BadRequest(new ApiResponseDto<object> { Status = "Error", Message = "User already exists!" });
 
@@ -85,7 +86,8 @@ public class AuthController : ControllerBase
             return BadRequest(
                 new ApiResponseDto<object>
                 {
-                    Status = "Error", Message = "User creation failed! Please check user details and try again.",
+                    Status = "Error",
+                    Message = "User creation failed! Please check user details and try again.",
                     Data = result.Errors
                 });
 
@@ -93,7 +95,7 @@ public class AuthController : ControllerBase
         return Ok(new ApiResponseDto<object> { Status = "Success", Message = "User created successfully!" });
     }
 
-    private async Task<IdentityResult> RegisterUser(RegisterUserDto dto)
+    private async Task<IdentityResult> RegisterUser(RegisterUserDto dto, string role)
     {
         var userExists = await _userManager.FindByNameAsync(dto.UserName);
         if (userExists != null)
@@ -116,10 +118,15 @@ public class AuthController : ControllerBase
         if (!await _roleManager.RoleExistsAsync(UserRoles.User))
             await _roleManager.CreateAsync(new IdentityRole(UserRoles.User));
 
-        if (await _roleManager.RoleExistsAsync(UserRoles.Admin))
+        if (role == UserRoles.Admin)
+        {
             await _userManager.AddToRoleAsync(user, UserRoles.Admin);
-        if (await _roleManager.RoleExistsAsync(UserRoles.Admin))
             await _userManager.AddToRoleAsync(user, UserRoles.User);
+        }
+        else
+        {
+            await _userManager.AddToRoleAsync(user, UserRoles.User);
+        }
 
         return result;
     }
