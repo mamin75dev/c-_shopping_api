@@ -24,7 +24,7 @@ builder.Services.AddSwaggerGen();
 
 
 builder.Services.AddDbContext<DataContext>(options =>
-    options.UseNpgsql(config.GetConnectionString("ShoppingDatabase")));
+    options.UseNpgsql(config.GetConnectionString("ShoppingDatabase"), b => b.MigrationsAssembly("ShoppingApi.Data")));
 
 builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<DataContext>()

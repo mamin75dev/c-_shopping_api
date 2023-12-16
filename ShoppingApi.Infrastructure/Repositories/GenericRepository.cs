@@ -37,4 +37,9 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         _dbContext.Set<T>().Update(entity);
     }
+
+    public IEnumerable<T> GetMany(Func<T, bool> where)
+    {
+        return _dbContext.Set<T>().Where(where).ToList();
+    }
 }

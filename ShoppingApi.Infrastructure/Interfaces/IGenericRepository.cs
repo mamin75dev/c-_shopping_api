@@ -7,4 +7,6 @@ public interface IGenericRepository<T> where T : class
     Task Add(T entity);
     void Delete(T entity);
     void Update(T entity);
+
+    IEnumerable<T> GetMany(Func<T, bool> where);
 }

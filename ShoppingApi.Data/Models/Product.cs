@@ -9,7 +9,7 @@ public class Product
     public double Discount { get; set; }
     public string[] Colors { get; set; }
     public string Sizes { get; set; }
-    public string Options { get; set; }
+    public string[] Options { get; set; }
     public string Images { get; set; }
     public int CategoryId { get; set; }
 

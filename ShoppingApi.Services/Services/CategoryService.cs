@@ -6,7 +6,7 @@ namespace ShoppingApi.Services.Services;
 
 public class CategoryService : ICategoryService
 {
-    public IUnitOfWork _unitOfWork;
+    private readonly IUnitOfWork _unitOfWork;
 
     public CategoryService(IUnitOfWork unitOfWork)
     {
