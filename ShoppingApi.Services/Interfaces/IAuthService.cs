@@ -1,3 +1,4 @@
+using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using ShoppingApi.Data.Dto.Request.Auth;
@@ -16,7 +17,11 @@ public abstract class IAuthService
         _userManager = manager;
     }
 
-    public abstract Task<string> GenerateJsonWebToken(User user);
+    public abstract Task<JwtSecurityToken> GenerateJsonWebToken(User user);
 
     public abstract Task<User> AuthenticateUser(LoginDto dto);
+
+    public abstract string? GetPrincipalFromExpiredToken(string? token);
+
+    public abstract string GenerateRefreshToke();
 }

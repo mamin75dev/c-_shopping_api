@@ -1,3 +1,4 @@
+using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -39,12 +40,24 @@ public class AuthController : ControllerBase
 
         if (user != null)
         {
-            var tokenString = await _authService.GenerateJsonWebToken(user);
+            var token = await _authService.GenerateJsonWebToken(user);
+            var refreshToken = _authService.GenerateRefreshToke();
+
+            user.RefreshToken = refreshToken;
+            user.RefreshTokenExpiryTime = DateTime.Now.AddDays(365);
+
+            await _userManager.UpdateAsync(user);
+
             response = Ok(new ApiResponseDto<object>
             {
                 Status = ResponseStatus.Success,
                 Message = "Successfull login!",
-                Data = new { token = tokenString }
+                Data = new
+                {
+                    AccessToken = new JwtSecurityTokenHandler().WriteToken(token),
+                    RefreshToken = refreshToken,
+                    Expiration = token.ValidTo
+                }
             });
         }
 
@@ -70,6 +83,54 @@ public class AuthController : ControllerBase
                     Data = result.Errors
                 });
         return Ok(new ApiResponseDto<object> { Status = "Success", Message = "User created successfully!" });
+    }
+
+    [HttpPost]
+    [Route("refresh-token")]
+    public async Task<IActionResult> RefreshToken(TokenModel? tokenModel)
+    {
+        if (tokenModel is null)
+            return BadRequest(
+                new ApiResponseDto<object>
+                {
+                    Status = "Error",
+                    Message = "Invalid client request"
+                });
+
+        var accessToken = tokenModel.AccessToken;
+        var refreshToken = tokenModel.RefreshToken;
+
+        var username = _authService.GetPrincipalFromExpiredToken(accessToken);
+        if (username == null)
+            return BadRequest(new ApiResponseDto<object>
+            {
+                Status = "Error",
+                Message = "Invalid access token or refresh token"
+            });
+
+        // var username = principal.Identity.Name;
+
+        var user = await _userManager.FindByNameAsync(username);
+
+        if (user == null || user.RefreshToken != refreshToken || user.RefreshTokenExpiryTime <= DateTime.Now)
+            return BadRequest("Invalid access token or refresh token");
+
+        var newAccessToken = await _authService.GenerateJsonWebToken(user);
+        var newRefreshToken = _authService.GenerateRefreshToke();
+
+        user.RefreshToken = newRefreshToken;
+        await _userManager.UpdateAsync(user);
+
+        return Ok(new ApiResponseDto<object>
+        {
+            Status = ResponseStatus.Success,
+            Message = "",
+            Data = new
+            {
+                AccessToken = new JwtSecurityTokenHandler().WriteToken(newAccessToken),
+                RefreshToken = newRefreshToken
+            }
+        });
     }
 
 
