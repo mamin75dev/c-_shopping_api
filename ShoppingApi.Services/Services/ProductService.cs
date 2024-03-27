@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using ShoppingApi.Data.Dto.Request;
 using ShoppingApi.Data.Mappers;
 using ShoppingApi.Data.Models;
@@ -36,10 +37,35 @@ public class ProductService : IProductService
         return products;
     }
 
+    public async Task<List<Product>> SearchProducts(Expression<Func<Product, bool>> predicate)
+    {
+        var products = (await _unitOfWork.Products.Search(predicate)).ToList();
+        return products;
+    }
+
     public List<Product> GetAllProductsByCategoryId(int catId)
     {
-        var products = (_unitOfWork.Products.GetMany(p => p.CategoryId == catId)).ToList();
+        var products = _unitOfWork.Products.GetMany(p => p.CategoryId == catId).ToList();
         return products;
+    }
+
+    public async Task<bool> DeleteProduct(int productId)
+    {
+        if (productId > 0)
+        {
+            var product = await _unitOfWork.Products.GetById(productId);
+            if (product != null)
+            {
+                _unitOfWork.Products.Delete(product);
+                var result = _unitOfWork.Save();
+
+                if (result > 0)
+                    return true;
+                return false;
+            }
+        }
+
+        return false;
     }
 
     public async Task<Product> GetProductById(int id)
@@ -50,10 +76,7 @@ public class ProductService : IProductService
 
     public async Task<bool> UpdateProduct(int id, UpdateProductDto dto)
     {
-        if (id <= 0)
-        {
-            return false;
-        }
+        if (id <= 0) return false;
 
         if (dto != null)
         {
@@ -67,6 +90,7 @@ public class ProductService : IProductService
                     return true;
                 return false;
             }
+
             return false;
         }
 

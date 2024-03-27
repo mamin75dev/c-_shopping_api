@@ -25,12 +25,20 @@ public class CategoryController : ControllerBase
     public async Task<IActionResult> GetAllCategories()
     {
         var categories = await _categoryService.GetAllCategories();
-        if (categories == null)
-            return NotFound(new ApiResponseDto<object>
-                { Status = ResponseStatus.Success, Message = "No categories found!" });
 
         return Ok(new ApiResponseDto<IEnumerable<Category>>
-            { Status = ResponseStatus.Success, Message = "Categories Found!", Data = categories });
+            { Status = ResponseStatus.Success, Message = "", Data = categories });
+    }
+
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    [HttpGet]
+    [Route("")]
+    public async Task<IActionResult> SearchCategories([FromQuery] string name)
+    {
+        var categories = await _categoryService.SearchCategories(category => category.Name.Contains(name));
+
+        return Ok(new ApiResponseDto<IEnumerable<Category>>
+            { Status = ResponseStatus.Success, Message = "", Data = categories });
     }
 
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = UserRoles.Admin)]
@@ -51,7 +59,7 @@ public class CategoryController : ControllerBase
     [Authorize(Roles = UserRoles.Admin, AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [HttpDelete]
     [Route("delete/{categoryId}")]
-    public async Task<IActionResult> DeleteProduct(int catId)
+    public async Task<IActionResult> DeleteCategory(int catId)
     {
         var isDeleted = await _categoryService.DeleteCategory(catId);
 

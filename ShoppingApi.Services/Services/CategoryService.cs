@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using ShoppingApi.Data.Models;
 using ShoppingApi.Infrastructure.Interfaces;
 using ShoppingApi.Services.Interfaces;
@@ -52,5 +53,11 @@ public class CategoryService : ICategoryService
         }
 
         return false;
+    }
+
+    public async Task<IEnumerable<Category>> SearchCategories(Expression<Func<Category, bool>> predicate)
+    {
+        var categoriesList = await _unitOfWork.Categories.Search(predicate);
+        return categoriesList;
     }
 }
