@@ -8,18 +8,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8147193a-3bc0-4c08-b78b-cce792fda718" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AdminPanel/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdminPanel/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminPanel/Pages/Categories/AddCategory.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminPanel/Pages/Categories/AddCategory.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminPanel/Pages/Categories/EditCategory.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminPanel/Pages/Categories/EditCategory.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminPanel/Pages/Categories/Index.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminPanel/Pages/Categories/Index.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminPanel/Pages/Products/AddProduct.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminPanel/Pages/Products/AddProduct.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminPanel/Pages/Products/EditProduct.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminPanel/Pages/Products/EditProduct.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminPanel/Pages/Products/Index.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminPanel/Pages/Products/Index.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminPanel/Pages/Users/AddUser.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminPanel/Pages/Users/AddUser.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminPanel/Pages/Users/EditUser.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminPanel/Pages/Users/EditUser.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminPanel/Pages/Users/Index.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AdminPanel/Pages/Users/Index.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.shopping/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.shopping/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoppingApi.Infrastructure/Interfaces/IGenericRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Infrastructure/Interfaces/IGenericRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoppingApi.Infrastructure/Repositories/GenericRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Infrastructure/Repositories/GenericRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoppingApi.Services/Interfaces/ICategoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Services/Interfaces/ICategoryService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoppingApi.Services/Interfaces/IProductService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Services/Interfaces/IProductService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoppingApi.Services/Services/CategoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Services/Services/CategoryService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoppingApi.Services/Services/ProductService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Services/Services/ProductService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoppingApi/Controllers/CategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi/Controllers/CategoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoppingApi/Controllers/ProductController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi/Controllers/ProductController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping.sln" beforeDir="false" afterPath="$PROJECT_DIR$/shopping.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/AdminPanel.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/AdminPanel.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/Pages/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/Pages/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/Pages/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/Pages/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/wwwroot/css/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +74,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2YuTPqIDJZMq7mcgbtIZwOc6gEM" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -77,7 +92,7 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.shopping">
+  <component name="RunManager" selected=".NET Launch Settings Profile.AdminPanel">
     <configuration name="AdminPanel" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/AdminPanel/AdminPanel.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
@@ -152,7 +167,8 @@
       <workItem from="1702044070569" duration="3762000" />
       <workItem from="1702728653064" duration="442000" />
       <workItem from="1709394086768" duration="1729000" />
-      <workItem from="1711435884881" duration="12285000" />
+      <workItem from="1711435884881" duration="14043000" />
+      <workItem from="1711642297023" duration="6601000" />
     </task>
     <task id="LOCAL-00001" summary="user auth">
       <created>1701430514193</created>

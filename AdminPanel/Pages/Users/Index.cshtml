@@ -1,0 +1,75 @@
+@page
+@model AdminPanel.Pages.Users.Index
+
+@{
+    ViewData["Title"] = "کاربران";
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>کاربران</title>
+</head>
+
+<body>
+<div class="container p-3">
+
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">لیست کاربران</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-page="/AddUser" class="btn btn-primary">
+                <i class="bi bi-plus-lg"></i>
+                &nbsp; ایجاد کاربر جدید
+            </a>
+        </div>
+    </div>
+
+    <br/><br/>
+
+    <table class="table table-bordered" style="width:100%">
+        <thead>
+        <tr class="table-info">
+            <th>ردیف</th>
+            <th>نام</th>
+            <th>نام خانوادگی</th>
+            <th>نام کاربری</th>
+            <th>شماره تماس</th>
+            <th>آدرس</th>
+            <th>عملیات</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var obj in Model.Users)
+        {
+            <tr>
+                @* <td>@(Model.Users.ToList().FindIndex(u => u.Id == obj.Id) + 1)</td> *@
+                <td></td>
+                <td>@obj.FirstName</td>
+                <td>@obj.LastName</td>
+                <td>@obj.UserName</td>
+                <td>@obj.PhoneNumber</td>
+                <td>@obj.Address</td>
+
+                <td>
+                    <div class="w-25 btn-group" role="group">
+                        <a asp-page="Edit" asp-route-id="@obj.Id" class="btn btn-primary mx-2">
+                            <i class="bi bi-pencil"></i>
+                        </a>
+                        <a asp-page="" asp-route-id="@obj.Id" class="btn btn-danger mx-2">
+                            <i class="bi bi-trash"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+</div>
+</body>
+
+</html>
