@@ -7,7 +7,7 @@ namespace ShoppingApi.Services.Interfaces;
 public interface IProductService
 {
     Task<bool> CreateProduct(CreateProductDto dto);
-    Task<bool> UpdateProduct(int id, UpdateProductDto dto);
+    Task<bool> UpdateProduct(int id, CreateProductDto dto);
     Task<Product> GetProductById(int id);
     Task<List<Product>> GetAllProducts();
 

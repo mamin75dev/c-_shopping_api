@@ -74,7 +74,7 @@ public class ProductService : IProductService
         return product;
     }
 
-    public async Task<bool> UpdateProduct(int id, UpdateProductDto dto)
+    public async Task<bool> UpdateProduct(int id, CreateProductDto dto)
     {
         if (id <= 0) return false;
 

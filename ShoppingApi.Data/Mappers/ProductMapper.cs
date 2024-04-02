@@ -1,51 +1,57 @@
 ﻿using ShoppingApi.Data.Dto.Request;
 using ShoppingApi.Data.Models;
 
-namespace ShoppingApi.Data.Mappers
+namespace ShoppingApi.Data.Mappers;
+
+public static class ProductMapper
 {
-    public static class ProductMapper
+    public static Product MapToProduct(this CreateProductDto dto)
     {
-
-        public static Product MapToProduct(this CreateProductDto dto)
+        var product = new Product
         {
-            var product = new Product
-            {
-                Title = dto.Title,
-                Description = dto.Description,
-                Price = dto.Price,
-                Discount = dto.Discount,
-                Colors = dto.Colors,
-                Sizes = dto.Sizes,
-                Options = dto.Options,
-                Images = dto.Images,
-                CategoryId = dto.CategoryId,
-            };
+            Title = dto.Title,
+            Description = dto.Description,
+            Price = dto.Price,
+            Discount = dto.Discount,
+            EndOfDiscount = dto.EndOfDiscount,
+            Colors = dto.Colors,
+            Weight = dto.Weight,
+            BodyMaterial = dto.BodyMaterial,
+            Model = dto.Model,
+            IntroductionDate = dto.IntroductionDate,
+            Options = dto.Options,
+            Images = dto.Images,
+            CategoryId = dto.CategoryId,
+            BrandId = dto.BrandId
+        };
 
-            return product;
-        }
+        return product;
+    }
 
-        public static Product MapToProduct(this UpdateProductDto dto, int id)
+    public static Product MapToProduct(this CreateProductDto dto, int id)
+    {
+        if (id == null || id == 0) return null;
+        if (dto.CategoryId == null) return null;
+
+        var product = new Product
         {
-            if (dto.CategoryId == null)
-            {
-                return null;
-            }
+            Id = id,
+            Title = dto.Title,
+            Description = dto.Description,
+            Price = dto.Price,
+            Discount = dto.Discount,
+            EndOfDiscount = dto.EndOfDiscount,
+            Colors = dto.Colors,
+            Weight = dto.Weight,
+            BodyMaterial = dto.BodyMaterial,
+            Model = dto.Model,
+            IntroductionDate = dto.IntroductionDate,
+            Options = dto.Options,
+            Images = dto.Images,
+            CategoryId = dto.CategoryId,
+            BrandId = dto.BrandId
+        };
 
-            var product = new Product
-            {
-                Id = id,
-                Title = dto.Title,
-                Description = dto.Description,
-                Price = dto.Price ?? 0,
-                Discount = dto.Discount ?? 0,
-                Colors = dto.Colors,
-                Sizes = dto.Sizes,
-                Options = dto.Options,
-                Images = dto.Images,
-                CategoryId = dto.CategoryId ?? 1,
-            };
-
-            return product;
-        }
+        return product;
     }
 }

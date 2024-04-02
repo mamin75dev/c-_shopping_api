@@ -3,6 +3,8 @@
 
 @{
     ViewData["Title"] = "کاربران";
+    var users = Model.Users;
+    var usersCount = users.Count();
 }
 
 <!DOCTYPE html>
@@ -43,11 +45,12 @@
         </tr>
         </thead>
         <tbody>
-        @foreach (var obj in Model.Users)
+        @for (var i = 0; i < usersCount; i++)
         {
+            var obj = users.ElementAt(i);
             <tr>
-                @* <td>@(Model.Users.ToList().FindIndex(u => u.Id == obj.Id) + 1)</td> *@
-                <td></td>
+                <td>@(i + 1)</td>
+                @* <td></td> *@
                 <td>@obj.FirstName</td>
                 <td>@obj.LastName</td>
                 <td>@obj.UserName</td>
