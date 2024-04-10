@@ -30,5 +30,6 @@ public class RegisterUserDto
 
     [Display(Name = "پست الکترونیکی")]
     [Required(ErrorMessage = "وارد کردن پست الکترونیکی الزامی است!")]
+    [EmailAddress(ErrorMessage = "آدرس پست الکترونیکی نامعتبر است!")]
     public string Email { get; set; } = string.Empty;
 }
