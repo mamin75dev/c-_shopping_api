@@ -1,19 +1,69 @@
 @page
+@using ShoppingApi.Data.Models.Auth
 @model AdminPanel.Pages.Users.AddUser
 
 @{
-    Layout = null;
+    ViewData["Title"] = "ایجاد کاربر جدید";
 }
 
 <!DOCTYPE html>
 
 <html>
 <head>
-    <title></title>
+    <title>ایجاد کاربر جدید</title>
+    <link rel="stylesheet" href="~/css/add_user.css" asp-append-version="true"/>
 </head>
 <body>
-<div>
-    
-</div>
+<h3 class="text-primary">ایجاد کاربر جدید</h3>
+<form method="post" asp-validation-summary="All">
+    <div class="container register border">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="row register-form">
+            <div class="col-md-6">
+                <div class="form-group form-input">
+                    <input type="text" class="form-control" name="firstName" placeholder="نام" value="@(Model.User.FirstName)" asp-for="User.FirstName" vali/>
+                </div>
+                <div class="form-group form-input">
+                    <input type="email" class="rtl-input form-control" name="email" placeholder="پست الکترونیکی" value="@(Model.User.Email)" asp-for="User.Email"/>
+                </div>
+                <div class="form-group form-input">
+                    <input type="text" class="form-control" name="userName" placeholder="نام کاربری" value="@(Model.User.UserName)" asp-for="User.UserName"/>
+                </div>
+                <div class="form-group form-input">
+                    <input type="password" class="form-control" name="password" placeholder="رمز عبور" value="@(Model.Password)" asp-for="Password" disabled="@(Model.Password.Length > 0)"/>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="form-group form-input">
+                    <input type="text" class="form-control" name="lastName" placeholder="نام خانوادگی" value="@(Model.User.LastName)" asp-for="User.LastName"/>
+                </div>
+
+                <div class="form-group form-input">
+                    <input type="text" minlength="10" maxlength="10" name="phoneNumber" class="form-control" placeholder="شماره موبایل" value="@(Model.User.PhoneNumber)" asp-for="User.PhoneNumber"/>
+                </div>
+
+                <div class="form-group form-input">
+                    <select class="form-control" asp-for="UserRole">
+                        <option class="hidden" selected="@(Model.User.UserName.Length <= 0)" disabled>نقش کاربر</option>
+                        <option value="Admin" selected="@(Model.UserRole == UserRoles.Admin)">ادمین</option>
+                        <option value="User" selected="@(Model.UserRole == UserRoles.User)">کاربر عادی</option>
+                    </select>
+                </div>
+                <div class="form-group form-input">
+                    <input type="password" class="form-control" name="confirmPassword" placeholder="تکرار رمز عبور" value="@(Model.ConfirmPassword)" asp-for="ConfirmPassword" disabled="@(Model.Password.Length > 0)"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-group form-input">
+            <input type="text" name="address" class="form-control" placeholder="آدرس" asp-for="User.Address" value="@(Model.User.Address)"/>
+        </div>
+        <div class="col text-center btn-register">
+            <input type="submit" class="btn btn-primary" value="ثبت نام"/>
+        </div>
+    </div>
+</form>
+
+
 </body>
 </html>

@@ -1,0 +1,28 @@
+.register {
+    /*margin-top: 3%;*/
+    padding: 3%;
+}
+
+.form-input {
+    margin-bottom: 8px;
+}
+
+.register-heading {
+    /*text-align: center;*/
+    margin-bottom: -15%;
+    color: #495057;
+}
+
+.btn-register {
+    margin-top: 2%;
+}
+
+.rtl-input {
+    direction: rtl;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

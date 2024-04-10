@@ -20,10 +20,10 @@
 
     <div class="row pt-4">
         <div class="col-6">
-            <h2 class="text-primary">لیست کاربران</h2>
+            <h3 class="text-primary">لیست کاربران</h3>
         </div>
         <div class="col-6 text-end">
-            <a asp-page="/AddUser" class="btn btn-primary">
+            <a asp-page="/Users/AddUser" class="btn btn-primary">
                 <i class="bi bi-plus-lg"></i>
                 &nbsp; ایجاد کاربر جدید
             </a>
@@ -59,7 +59,7 @@
 
                 <td>
                     <div class="w-25 btn-group" role="group">
-                        <a asp-page="Edit" asp-route-id="@obj.Id" class="btn btn-primary mx-2">
+                        <a asp-page="/Users/AddUser" asp-route-id="@obj.Id" class="btn btn-primary mx-2">
                             <i class="bi bi-pencil"></i>
                         </a>
                         <a asp-page="" asp-route-id="@obj.Id" class="btn btn-danger mx-2">

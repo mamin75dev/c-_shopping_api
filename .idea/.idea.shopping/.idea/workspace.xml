@@ -8,20 +8,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8147193a-3bc0-4c08-b78b-cce792fda718" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/AdminPanel/wwwroot/css/add_user.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoppingApi.Infrastructure/Interfaces/IUserRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ShoppingApi.Infrastructure/Repositories/UserRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.shopping/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.shopping/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/AdminPanel.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/AdminPanel.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminPanel/Pages/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/Pages/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/Pages/Users/AddUser.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/Pages/Users/AddUser.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminPanel/Pages/Users/AddUser.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/Pages/Users/AddUser.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/Pages/Users/EditUser.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/Pages/Users/EditUser.cshtml.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminPanel/Pages/Users/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/Pages/Users/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoppingApi.Data/Dto/Request/CreateProductDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/Dto/Request/CreateProductDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoppingApi.Data/Dto/Request/UpdateProductDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoppingApi.Data/Mappers/ProductMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/Mappers/ProductMapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoppingApi.Services/Interfaces/IProductService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Services/Interfaces/IProductService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoppingApi.Services/Services/ProductService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Services/Services/ProductService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/Pages/Users/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/Pages/Users/Index.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi.Data/DataContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/DataContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi.Data/Dto/Request/Auth/RegisterUserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/Dto/Request/Auth/RegisterUserDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi.Data/Migrations/DataContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/Migrations/DataContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi.Infrastructure/Interfaces/IUnitOfWork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Infrastructure/Interfaces/IUnitOfWork.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi.Infrastructure/Repositories/UnitOfWork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Infrastructure/Repositories/UnitOfWork.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,6 +58,7 @@
     <setting file="file://$PROJECT_DIR$/ShoppingApi.Infrastructure/Interfaces/IUnitOfWork.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1dd01cdf46454af8b57ca82bc8f0b283904e87d1f871f5e54fe6cd345ba024/JsonPropertyInfoOfT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ShoppingApi.Infrastructure/Interfaces/IGenericRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/mohamadamin/w/courses/flutter/services/shopping/AdminPanel/Pages/Users/AddUser.cshtml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ShoppingApi.Infrastructure/Repositories/CategoryRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/dcedbc87754f258c5cbaf81957c25226a51ba1fd897ccb6a3d357ace4202/AuthorizeAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/37a954845b52703c5cce1aacf8fa1292378878e82bf68c4c4b5effc447316e9/IdentityUser.cs" root0="SKIP_HIGHLIGHTING" />
@@ -62,6 +82,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
@@ -69,11 +90,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="rider.code.cleanup.on.save" value="true" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="SolutionBuilderGeneralOptionsPageId" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.AdminPanel">
@@ -154,6 +176,10 @@
       <workItem from="1711435884881" duration="14043000" />
       <workItem from="1711642297023" duration="8540000" />
       <workItem from="1711877644011" duration="4669000" />
+      <workItem from="1712306250250" duration="1669000" />
+      <workItem from="1712764295896" duration="4782000" />
+      <workItem from="1712770274839" duration="235000" />
+      <workItem from="1712770552632" duration="6133000" />
     </task>
     <task id="LOCAL-00001" summary="user auth">
       <created>1701430514193</created>
@@ -198,7 +224,7 @@
               <option value="5695" />
             </startOffsets>
             <endOffsets>
-              <option value="5962" />
+              <option value="5993" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />
@@ -231,5 +257,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

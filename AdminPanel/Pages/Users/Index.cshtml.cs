@@ -1,22 +1,22 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ShoppingApi.Data;
 using ShoppingApi.Data.Models.Auth;
+using ShoppingApi.Infrastructure.Interfaces;
 
 namespace AdminPanel.Pages.Users;
 
 public class Index : PageModel
 {
-    private readonly DataContext _dbContext;
+    private readonly IUnitOfWork _unitOfWork;
 
     public IEnumerable<User> Users;
 
-    public Index(DataContext dbContext)
+    public Index(IUnitOfWork unitOfWork)
     {
-        _dbContext = dbContext;
+        _unitOfWork = unitOfWork;
     }
 
-    public void OnGet()
+    public async Task OnGetAsync()
     {
-        Users = _dbContext.Users;
+        Users = await _unitOfWork.Users.GetAll();
     }
 }

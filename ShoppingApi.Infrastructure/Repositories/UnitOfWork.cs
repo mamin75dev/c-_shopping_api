@@ -7,12 +7,16 @@ public class UnitOfWork : IUnitOfWork
 {
     private readonly DataContext _dbContext;
 
-    public UnitOfWork(DataContext dbContext, ICategoryRepository categories, IProductRepository products)
+    public UnitOfWork(DataContext dbContext, ICategoryRepository categories, IProductRepository products,
+        IUserRepository users)
     {
         _dbContext = dbContext;
         Categories = categories;
         Products = products;
+        Users = users;
     }
+
+    public IUserRepository Users { get; }
 
     public ICategoryRepository Categories { get; }
     public IProductRepository Products { get; }

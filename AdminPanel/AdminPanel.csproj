@@ -13,6 +13,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\ShoppingApi.Data\ShoppingApi.Data.csproj" />
+      <ProjectReference Include="..\ShoppingApi.Infrastructure\ShoppingApi.Infrastructure.csproj" />
     </ItemGroup>
 
     <ItemGroup>

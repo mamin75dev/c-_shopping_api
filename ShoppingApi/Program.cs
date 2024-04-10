@@ -1,3 +1,4 @@
+using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -8,7 +9,6 @@ using ShoppingApi.Infrastructure.Interfaces;
 using ShoppingApi.Infrastructure.Repositories;
 using ShoppingApi.Services.Interfaces;
 using ShoppingApi.Services.Services;
-using System.Text;
 
 const string BearerPrefix = "Bearer ";
 
@@ -35,6 +35,7 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var issuer = config["JwtSettings:Issuer"];
@@ -95,7 +96,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.UseCors(x =>
-  x.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:5106"));
+    x.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:5106"));
 
 /*app.UseRouting();
 app.UseAuthentication();

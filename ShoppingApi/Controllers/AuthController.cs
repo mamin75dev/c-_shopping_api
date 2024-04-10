@@ -168,7 +168,8 @@ public class AuthController : ControllerBase
             LastName = dto.LastName,
             UserName = dto.UserName,
             Address = dto.Address,
-            PhoneNumber = dto.PhoneNumber
+            PhoneNumber = dto.PhoneNumber,
+            Email = dto.Email
             // Password = dto.Password
         };
 

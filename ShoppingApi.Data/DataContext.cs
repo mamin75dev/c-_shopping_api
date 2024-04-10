@@ -15,6 +15,7 @@ public class DataContext : IdentityDbContext<User>
     public DbSet<User> Users { get; set; }
     public DbSet<Product> Products { get; set; }
     public DbSet<Category> Categories { get; set; }
+    public DbSet<Brand> Brands { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -22,6 +23,11 @@ public class DataContext : IdentityDbContext<User>
         modelBuilder.Entity<Product>().HasOne(e => e.Category)
             .WithMany(e => e.Products)
             .HasForeignKey(e => e.CategoryId)
+            .IsRequired();
+
+        modelBuilder.Entity<Product>().HasOne(e => e.Brand)
+            .WithMany(e => e.Products)
+            .HasForeignKey(e => e.BrandId)
             .IsRequired();
     }
 }
