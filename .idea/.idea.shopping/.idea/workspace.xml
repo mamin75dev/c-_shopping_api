@@ -7,9 +7,17 @@
     <projectFile profileName="IIS Express">AdminPanel/AdminPanel.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8147193a-3bc0-4c08-b78b-cce792fda718" name="Changes" comment="adduser + edituser pages complete (bug in edit)">
+    <list default="true" id="8147193a-3bc0-4c08-b78b-cce792fda718" name="Changes" comment="add email address new validation">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.shopping/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.shopping/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoppingApi.Data/Dto/Request/Auth/RegisterUserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingApi.Data/Dto/Request/Auth/RegisterUserDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/Pages/Categories/AddCategory.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/Pages/Categories/AddCategory.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/Pages/Categories/EditCategory.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/Pages/Categories/EditCategory.cshtml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/Pages/Categories/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/Pages/Categories/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/Pages/Categories/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/Pages/Categories/Index.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/Pages/Products/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/Pages/Products/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/Pages/Products/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/Pages/Products/Index.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/Pages/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/Pages/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminPanel/Pages/Users/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminPanel/Pages/Users/Index.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,11 +54,13 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/938451c5b6533f9735e3b49a511f654a35443bc73eecd2d434f10d8c2ba1a/Encoding.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7733bdb26b2be012c4266979a95d3728e74790201f91a02df4529ee6c2f37/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e5cca3f0812c4cd5b3459befa246b34613f78/20/50451ecb/JwtSecurityToken.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/mohamadamin/w/courses/flutter/services/shopping/AdminPanel/Pages/Users/Index.cshtml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e01728b72477437d813f98635f3e23fb823ce74b96f219d9a6b7b539445f7f9/JwtSecurityToken.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ShoppingApi.Infrastructure/Interfaces/ICategoryRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7262732eee179af215faab36a7f3c3cfac93ba12af52a3888d839fe7e53420/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ShoppingApi/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ShoppingApi/appsettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/mohamadamin/w/courses/flutter/services/shopping/ShoppingApi.Data/Dto/Request/Auth/RegisterUserDto.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a89c43b9e4639a86ef72bfbdd915cf3a88d4582ea46a7bc809f17b1baa77abf/AsyncTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ShoppingApi.Infrastructure/Repositories/GenericRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ShoppingApi.Infrastructure/Interfaces/IProductRepository.cs" root0="FORCE_HIGHLIGHTING" />
@@ -160,7 +170,7 @@
       <workItem from="1712306250250" duration="1669000" />
       <workItem from="1712764295896" duration="4782000" />
       <workItem from="1712770274839" duration="235000" />
-      <workItem from="1712770552632" duration="6449000" />
+      <workItem from="1712770552632" duration="12012000" />
     </task>
     <task id="LOCAL-00001" summary="user auth">
       <created>1701430514193</created>
@@ -176,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712784108798</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add email address new validation">
+      <created>1712784425407</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712784425407</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,7 +217,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="user auth" />
     <MESSAGE value="adduser + edituser pages complete (bug in edit)" />
-    <option name="LAST_COMMIT_MESSAGE" value="adduser + edituser pages complete (bug in edit)" />
+    <MESSAGE value="add email address new validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="add email address new validation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

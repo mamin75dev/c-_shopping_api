@@ -1,22 +1,22 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ShoppingApi.Data;
 using ShoppingApi.Data.Models;
+using ShoppingApi.Infrastructure.Interfaces;
 
 namespace AdminPanel.Pages.Categories;
 
 public class Index : PageModel
 {
-    private readonly DataContext _dbContext;
+    private readonly IUnitOfWork _unitOfWork;
 
     public IEnumerable<Category> Categories;
 
-    public Index(DataContext dbContext)
+    public Index(IUnitOfWork unitOfWork)
     {
-        _dbContext = dbContext;
+        _unitOfWork = unitOfWork;
     }
 
-    public void OnGet()
+    public async Task OnGetAsync()
     {
-        Categories = _dbContext.Categories;
+        Categories = await _unitOfWork.Categories.GetAll();
     }
 }

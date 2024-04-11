@@ -2,17 +2,79 @@
 @model AdminPanel.Pages.Products.Index
 
 @{
-    Layout = null;
+    ViewData["Title"] = "محصولات";
+    var products = Model.Products;
 }
 
 <!DOCTYPE html>
 
 <html>
 <head>
-    <title></title>
+    <title>محصولات</title>
 </head>
 <body>
-<div>
+<div class="container p-3">
+
+    <div class="row pt-4">
+        <div class="col-6">
+            <h3 class="text-primary">محصولات</h3>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-page="/Users/AddUser" class="btn btn-primary">
+                <i class="bi bi-plus-lg"></i>
+                &nbsp; محصول جدید
+            </a>
+        </div>
+    </div>
+
+    <br/><br/>
+
+    <table class="table table-bordered" style="width:100%">
+        <thead>
+        <tr class="table-info">
+            <th>ردیف</th>
+            <th>نام</th>
+            <th>مدل</th>
+            <th>رنگ ها</th>
+            <th>قیمت</th>
+            <th>جنس بدنه</th>
+            <th>برند</th>
+            <th>تاریخ معرفی</th>
+            <th>وزن</th>
+            <th>توضیحات</th>
+            <th>عملیات</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var product in products)
+        {
+            var colors = product.Colors;
+            <tr>
+                <td>@product.Id</td>
+                @* <td></td> *@
+                <td>@product.Title</td>
+                <td>@product.Model</td>
+                <td></td>
+                <td>@product.Price</td>
+                <td>@product.BodyMaterial</td>
+                <td>@product.Brand</td>
+                <td>@product.IntroductionDate</td>
+                <td>@product.Weight</td>
+                <td>@product.Description</td>
+                <td>
+                    <div class="w-25 btn-group" role="group">
+                        <a asp-page="/Products/AddProduct" asp-route-id="@product.Id" class="btn btn-primary mx-2">
+                            <i class="bi bi-pencil"></i>
+                        </a>
+                        <a asp-page="" asp-route-id="@product.Id" class="btn btn-danger mx-2">
+                            <i class="bi bi-trash"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
 
 </div>
 </body>
